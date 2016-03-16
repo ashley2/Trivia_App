@@ -2,58 +2,58 @@
 
 var app = angular.module('triviaApp');
 
-app.controller('homeCtrl', function($scope) {
+// var regexUrl = '/\w+$/m';
+
+app.controller('homeCtrl', function($scope, $http, $state, $stateParams) {
   console.log('homeCtrl');
+  $scope.category = 'leader';
+
+  $scope.goToCategory = function(category) {
+    console.log('click');
+    console.log('gotToCategory', category);
+    var category = $stateParams.category;
+    $state.go('category', {
+      category: category
+      // category: `${category}`
+    })
+  }
+})
+
+app.controller('catCtrl', function($scope, $http, $stateParams, $state) {
+  // console.log('params:', $stateParams.category);
+  console.log('catCtrl');
+
+    $http({
+      method: "GET",
+      url: "/scripts/category/" + $state.params.category
+      }).then(function(response){
+        $scope.scripts = response.data;
+        console.log('scripts', $scope.scripts);
+      }, function(error){
+        console.log('error');
+    });
+  // $scope.scripts = [];
+  // var params = $stateParams.category;
+  // console.log('params', $stateParams);
 });
-
-
-///on click of that category - home submit ng-click
-// app.controller('leaderCtrl', function($scope, ScriptService) {
-app.controller('leaderCtrl', function($scope, $http) {
-  console.log('leaderCtrl');
-
-  $scope.scripts = [];
-
-  $http({
-    method: "GET",
-    url: "/scripts"
-    }).then(function(response){
-      $scope.scripts = response.data;
-      console.log('scripts', $scope.scripts);
-    }, function(error){
-      console.log('error');
-  });
-});
-
-//   $scope.getScripts = function() {
-//     ScriptService.fetch()
-//     .then(function(res) {
-//       var scripts = res.data;
-//       $scope.scripts = scripts;
-//     }, function(err) {
-//       console.error('err:', err);
-//     })
-//   }
+// app.controller('stackCtrl', function($scope, $http, $stateParams) {
+//   console.log('catCtrl');
+//
+//   // $scope.scripts = [];
+//   // var params = $stateParams.category;
+//   // console.log('params', $stateParams);
 // });
-  // ScriptService.fetch()
-  // .then(function(res) {
-  //   var scripts = res.data;
-  //   $scope.scripts = scripts;
-  // }, function(err) {
-  //   console.error('err:', err);
-  // })
-
-//custom trivia
-// $scope.addScript = function($scope, ScriptService){   //addQuestion on pageload?
-//   ScriptService.create($scope.newScript)
-//   .then(function(res){
-//     $scope.scripts.push(res.data)
-//   }, function(err){
-//     console.log(err)
-//   })
-// }
-
-//delete - custom - trivia
-
-
-//put - updated - on all four categories
+// app.controller('leadersCtrl', function($scope, $http, $stateParams) {
+//   console.log('catCtrl');
+//
+//   // $scope.scripts = [];
+//   // var params = $stateParams.category;
+//   // console.log('params', $stateParams);
+// });
+// app.controller('herstoryCtrl', function($scope, $http, $stateParams) {
+//   console.log('catCtrl');
+//
+//   // $scope.scripts = [];
+//   // var params = $stateParams.category;
+//   // console.log('params', $stateParams);
+// });

@@ -6,9 +6,12 @@ var db = require('../config/db');
 // /routes/car.js
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  var cat = 'leaders';
-  db.query("SELECT * FROM scripts WHERE category = cat", function(err, scripts) {
+router.get('/category/:chosenCategory', function(req, res, next) {
+  var chosenCategory = req.params.chosenCategory
+  console.log('route cat', chosenCategory);
+  // var cat = 'leaders';
+  db.query(`SELECT * FROM scripts WHERE category =  '${chosenCategory}'`, function(err, scripts) {
+  // db.query("SELECT * FROM scripts WHERE category = 'leaders'", function(err, scripts) {
     if(err) {
       res.status(400).send(err);
       return;
