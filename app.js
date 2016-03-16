@@ -1,4 +1,9 @@
+'use strict';
+
+const PORT = process.env.PORT || 8888;
+
 var express = require('express');
+var http = require('http');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -19,7 +24,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use('/', require('./routes/index'));
+app.use('/', require('./routes/index'));
 app.use('/scripts', require('./routes/scripts'));
 
 // catch 404 and forward to error handler
@@ -53,5 +58,10 @@ app.use(function(err, req, res, next) {
   });
 });
 
+var server = http.createServer(app);
+
+server.listen(PORT, function() {
+  console.log(`Server listening on port ${PORT}`);
+});
 
 module.exports = app;

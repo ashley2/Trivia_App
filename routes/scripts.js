@@ -27,4 +27,7 @@ router.post('/', function(req, res) {
   res.send();
 });
 
+//router.put
+
+//router.delete
 module.exports = router;
