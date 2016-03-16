@@ -11,3 +11,59 @@ a {
   max-width: 300px;
   max-width: 300px;
 }
+
+.questionBox1 {
+  height: 200px;
+  width: 655px;
+  background-color: #1E88E5
+}
+
+.answerBox1 {
+  height: 220px;
+  width: 252px;
+  background-color: #1E88E5
+}
+.questionBox2 {
+  height: 200px;
+  width: 655px;
+  background-color: #c2185b
+}
+
+.answerBox2 {
+  height: 220px;
+  width: 252px;
+  background-color: #c2185b
+}
+.questionBox3 {
+  height: 200px;
+  width: 655px;
+  background-color: #00acc1
+}
+
+.answerBox3 {
+  height: 220px;
+  width: 252px;
+  background-color: #00acc1
+}
+.questionBox4 {
+  height: 200px;
+  width: 655px;
+  background-color: #7c4dff
+}
+
+.answerBox4 {
+  height: 220px;
+  width: 252px;
+  background-color: #7c4dff
+}
+.questionBox5 {
+  height: 200px;
+  width: 655px;
+  background-color: #ef6c00
+}
+
+.answerBox5 {
+  height: 220px;
+  width: 252px;
+  background-color: #ef6c00
+}

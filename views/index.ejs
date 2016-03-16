@@ -14,78 +14,21 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.5.0/angular-messages.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
     <script src="js/module.js"></script>
     <script src="js/controllers.js"></script>
   </head>
-  <body>
+  <body ng-app="triviaApp">
     <h1>Trivia Categories</h1>
     <p>question your assumptions</p>
 
-    <div class="container">
-      <div class="row">
-        <div class="col s5">
-          <div class="card">
-            <div class="card-image">
-              <img class='photo' src="img/ada.jpg">
-              <span class="card-title">Card Title</span>
-            </div>
-            <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-            </div>
-          </div>
-        </div>
-        <div class="col s5">
-          <div class="card">
-            <div class="card-image">
-              <img class='photo' src="img/ada.jpg">
-              <span class="card-title">Card Title</span>
-            </div>
-            <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-            </div>
-          </div>
-        </div>
-      <div class="row">
-        <div class="col s5">
-          <div class="card">
-            <div class="card-image">
-              <img class='photo' src="img/ada.jpg">
-              <span class="card-title">Card Title</span>
-            </div>
-            <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-            </div>
-          </div>
-        </div>
-        <div class="col s5">
-          <div class="card">
-            <div class="card-image">
-              <img class='photo' src="img/ada.jpg">
-              <span class="card-title">Card Title</span>
-            </div>
-            <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-            </div>
-          </div>
-        </div>
-      </div>
 
-    </div>
+<!-- <a ui-sref="custom">Custom</a>
+<a ui-sref="herstory">Herstory</a>
+<a ui-sref="leader">Leader</a>
+<a ui-sref="stack">Stack</a> -->
+
+<ui-view></ui-view>
+
   </body>
 </html>
