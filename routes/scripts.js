@@ -7,7 +7,8 @@ var db = require('../config/db');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  db.query('SELECT * FROM scripts', function(err, scripts) {
+  var cat = 'leaders';
+  db.query("SELECT * FROM scripts WHERE category = cat", function(err, scripts) {
     if(err) {
       res.status(400).send(err);
       return;

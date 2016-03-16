@@ -1,69 +1,55 @@
+*{
+  font-family: 'Raleway', sans-serif;
+}
+#header {
+  font-size: 65px;
+}
+p {
+  font-size: 20px;
+}
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
 a {
   color: #00B7FF;
 }
-
 .photo {
   max-width: 300px;
   max-width: 300px;
 }
-
-.questionBox1 {
+.questionBox1, .questionBox2, .questionBox3, .questionBox4, .questionBox5 {
   height: 200px;
-  width: 655px;
+  width: 816px;
+}
+.answerBox1, .answerBox2, .answerBox3, .answerBox4, .answerBox5 {
+  height: 220px;
+  width: 252px;
+}
+.questionBox1, .answerBox1 {
   background-color: #1E88E5
 }
-
-.answerBox1 {
-  height: 220px;
-  width: 252px;
-  background-color: #1E88E5
-}
-.questionBox2 {
-  height: 200px;
-  width: 655px;
+.questionBox2, .answerBox2  {
   background-color: #c2185b
 }
-
-.answerBox2 {
-  height: 220px;
-  width: 252px;
-  background-color: #c2185b
-}
-.questionBox3 {
-  height: 200px;
-  width: 655px;
+.questionBox3, .answerBox3 {
   background-color: #00acc1
 }
-
-.answerBox3 {
-  height: 220px;
-  width: 252px;
-  background-color: #00acc1
-}
-.questionBox4 {
-  height: 200px;
-  width: 655px;
+.questionBox4, .answerBox4  {
   background-color: #7c4dff
 }
-
-.answerBox4 {
-  height: 220px;
-  width: 252px;
-  background-color: #7c4dff
-}
-.questionBox5 {
-  height: 200px;
-  width: 655px;
+.questionBox5, .answerBox5 {
   background-color: #ef6c00
 }
-
-.answerBox5 {
-  height: 220px;
-  width: 252px;
-  background-color: #ef6c00
+.title {
+  font-size: 50px;
+  color: #00acc1;
+  margin-bottom: 50px;
+}
+#her {
+  font-size: 50px;
+  color:#c2185b;
+}
+.selected {
+  border: 2px solid green;
 }

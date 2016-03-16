@@ -17,4 +17,6 @@ connection.connect(function(err) {
   }
 });
 
+connection.query("SELECT * FROM scripts WHERE cat")
+
 module.exports = connection;
