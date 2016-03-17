@@ -22,20 +22,20 @@ router.get('/category/:chosenCategory', function(req, res, next) {
 // var id = uuid();
 
 router.post('/category', function(req, res) {
-// var post = req.body;
-var post =
-{
-id: "35",
-category: 'herstory',
-question: 'Who holds the title for the first female video game designer:',
-answer1: 'Carol Shaw',
-answer2: 'Grace Hopper',
-answer3: 'Someone was hacking highly secretive computer programming information',
-show1: 'Carol Shaw',
-show2: 'Carol Shaw',
-show3: 'Carol Shaw',
-correct: 'answer1',
-selected: 'false' };
+var post = req.body;
+// var post =
+// {
+// id: "35",
+// category: 'herstory',
+// question: 'Who holds the title for the first female video game designer:',
+// answer1: 'Carol Shaw',
+// answer2: 'Grace Hopper',
+// answer3: 'Someone was hacking highly secretive computer programming information',
+// show1: 'Carol Shaw',
+// show2: 'Carol Shaw',
+// show3: 'Carol Shaw',
+// correct: 'answer1',
+// selected: 'false' };
   console.log('req.body:', req.body);
   db.query('INSERT INTO scripts SET ?', post, function(err, result) {
     if(err) {
@@ -46,18 +46,18 @@ selected: 'false' };
   res.send();
 });
 
-router.put('/', function(req, res) {
-  console.log('req.body:', req.body);
-  db.query('INSERT INTO scripts SET ?', req.body, function(err, result) {
-    if(err) {
-      res.status(400).send(err);
-      return;
-    }
-  });
-  res.send();
-});
-
-//router.put
-
-//router.delete
+// router.put('/', function(req, res) {
+//   // console.log('req.body:', req.body);
+//   db.query('INSERT INTO scripts SET ?', req.body, function(err, result) {
+//     if(err) {
+//       res.status(400).send(err);
+//       return;
+//     }
+//   });
+//   res.send();
+// });
+//
+// //router.put
+//
+// //router.delete
 module.exports = router;

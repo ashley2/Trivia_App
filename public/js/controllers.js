@@ -3,7 +3,6 @@
 var app = angular.module('triviaApp');
 
 
-// var regexUrl = '/\w+$/m';
 
 app.controller('homeCtrl', function($scope, $http, $state, $stateParams) {
   console.log('homeCtrl');
@@ -40,23 +39,37 @@ app.controller('catCtrl', function($scope, $http, $stateParams, $state) {
     });
     //Post
 
-    $scope.createScript = function(){
-      // var id = uuid();
-      // var newScript = $scope.newScript;
 
-    $http({
-      method: "POST",
-      url: "/scripts/category/",
-      data: { category: 'custom', question: 'q20', answer1: 'a1', answer2: 'a2', answer3: 'a3'}
-      }).then(function(response){
+});
 
-        // $scope.scripts.push(newScript);
-        // console.log('scripts', $scope.scripts);
-      }, function(error){
-        console.log('error');
-    });
+app.controller('customCtrl', function($scope, $http, $stateParams, $state) {
+console.log('working');
+$scope.newScripts = [];
+  $scope.createScript = function(){
+    // var id = uuid();
+
+    var newScript = $scope.newScript;
+    console.log(newScript);
+     $scope.newScripts.push(newScript);
+     console.log($scope.newScripts);
+  // $http({
+  //   method: "POST",
+  //   url: "/scripts/category/",
+  //   data: newScript
+  //   }).then(function(response){
+  //     console.log('scripts', $scope.scripts);
+  //   }, function(error){
+  //     console.log('error');
+  // });
   }
 });
+
+
+// $scope.script.question = answer1;
+// $scope.script.question = show1;
+
+
+
   //   //Delete -id
   //   $http({
   //     method: "DELETE",

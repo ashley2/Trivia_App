@@ -1,0 +1,202 @@
+
+<div id="controlContainer" ng-controller="customCtrl" ng-show="sumbitCustom"
+
+<div id="container1">
+  <div class="directions">Add your own 5 questions and answers!</div>
+  <div class="directions">Make sure you only have ONE correct answer!</div>
+
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s3">
+          <input  id="question" type="text" class="validate" ng-model="question">
+          <label for="Question">Question 1</label>
+        </div>
+        <div class="input-field col s3">
+          <input id="correctAnswer" type="text" class="validate">
+          <label for="CorrectAnswer">Correct Answer</label>
+        </div>
+
+        <div class="input-field col s3">
+          <input id="Question" type="text" class="validate">
+          <label for="incorrect">Incorrect Answer 1</label>
+        </div>
+        <div class="input-field col s3">
+          <input id="Question" type="text" class="validate">
+          <label for="incorrect">Incorrect Answer 2</label>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s3">
+          <input  id="question" type="text" class="validate">
+          <label for="Question">Question 2</label>
+        </div>
+        <div class="input-field col s3">
+          <input id="correctAnswer" type="text" class="validate">
+          <label for="CorrectAnswer">Correct Answer</label>
+        </div>
+
+        <div class="input-field col s3">
+          <input id="Question" type="text" class="validate">
+          <label for="incorrect">Incorrect Answer 1</label>
+        </div>
+        <div class="input-field col s3">
+          <input id="Question" type="text" class="validate">
+          <label for="incorrect">Incorrect Answer 2</label>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s3">
+          <input  id="question" type="text" class="validate">
+          <label for="Question">Question 3</label>
+        </div>
+        <div class="input-field col s3">
+          <input id="correctAnswer" type="text" class="validate">
+          <label for="CorrectAnswer">Correct Answer</label>
+        </div>
+
+        <div class="input-field col s3">
+          <input id="Question" type="text" class="validate">
+          <label for="incorrect">Incorrect Answer 1</label>
+        </div>
+        <div class="input-field col s3">
+          <input id="Question" type="text" class="validate">
+          <label for="incorrect">Incorrect Answer 2</label>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s3">
+          <input  id="question" type="text" class="validate">
+          <label for="Question">Question 4</label>
+        </div>
+        <div class="input-field col s3">
+          <input id="correctAnswer" type="text" class="validate">
+          <label for="CorrectAnswer">Correct Answer</label>
+        </div>
+
+        <div class="input-field col s3">
+          <input id="Question" type="text" class="validate">
+          <label for="incorrect">Incorrect Answer 1</label>
+        </div>
+        <div class="input-field col s3">
+          <input id="Question" type="text" class="validate">
+          <label for="incorrect">Incorrect Answer 2</label>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s3">
+          <input  id="question" type="text" class="validate">
+          <label for="Question">Question 5</label>
+        </div>
+        <div class="input-field col s3">
+          <input id="correctAnswer" type="text" class="validate">
+          <label for="CorrectAnswer">Correct Answer</label>
+        </div>
+
+        <div class="input-field col s3">
+          <input id="Question" type="text" class="validate">
+          <label for="incorrect">Incorrect Answer 1</label>
+        </div>
+        <div class="input-field col s3">
+          <input id="Question" type="text" class="validate">
+          <label for="incorrect">Incorrect Answer 2</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a class="waves-effect waves-light btn" type="submit">Submit</a>
+</form>
+</div>
+</div>
+
+
+
+
+<div id="container2" ng-hide="submitCustom">
+<div class="title"></div>
+
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <div class="card">
+        <div class="card-image">
+          <div class='questionBox1'></div>
+          <span class="card-title">{{script.question}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="row">
+
+    <div class="col s4">
+      <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <div class='answerBox1'ng-click="selected(answer)"></div>
+          <span class="card-title">{{script.answer1}}</span>
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">
+          <a class="btn-floating red" ng-click="getSelection(script)"><i class="material-icons">android</i></a>
+        </div>
+        <div class="card-action">
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">Answer<i class="material-icons right">code</i></span>
+          <p>{{script.show1}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col s4">
+      <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <div class='answerBox1'ng-click="selected(answer)"></div>
+          <span class="card-title">{{script.answer2}}</span>
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">
+          <a class="btn-floating red" ng-click="getSelection(script)"><i class="material-icons">android</i></a>
+        </div>
+        <div class="card-action">
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">Answer<i class="material-icons right">code</i></span>
+          <p>{{script.show2}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col s4">
+      <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <div class='answerBox1'ng-click="selected(answer)"></div>
+          <span class="card-title">{{script.answer3}}</span>
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">
+          <a class="btn-floating red" ng-click="getSelection(script)"><i class="material-icons">android</i></a>
+        </div>
+        <div class="card-action">
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">Answer<i class="material-icons right">code</i></span>
+          <p>{{script.show3}}</p>
+        </div>
+      </div>
+    </div>
+</div>
+</div>
