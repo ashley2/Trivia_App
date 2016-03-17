@@ -30,13 +30,9 @@ app.controller('catCtrl', function($scope, $http, $stateParams, $state) {
       url: "/scripts/category/" + $state.params.category
       }).then(function(response){
         $scope.scripts = response.data;
-        // console.log('scripts', $scope.scripts);
       }, function(error){
         console.log('error');
     });
-    //Post
-
-
 });
 
 app.controller('customCtrl', function($scope, $http, $stateParams, $state) {
@@ -66,7 +62,6 @@ app.controller('customCtrl', function($scope, $http, $stateParams, $state) {
       data: newScript
       }).then(function(response){
         console.log('result', response);
-        // console.log('scripts', $scope.newScripts);
       }, function(error){
         console.log('error');
     });
@@ -80,7 +75,6 @@ app.controller('customCtrl', function($scope, $http, $stateParams, $state) {
       })
       .then(function(data) {
         console.log('success');
-        // $scope.newScripts.splice(index, 1);
       }, function(err) {
         console.error(err);
       })
@@ -93,7 +87,6 @@ app.controller('customCtrl', function($scope, $http, $stateParams, $state) {
       })
       .then(function(data) {
         console.log('success');
-        // $scope.newScripts.splice(index, 1);
       }, function(err) {
         console.error(err);
       })

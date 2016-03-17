@@ -27,18 +27,4 @@ var post = req.body;
   res.send();
 });
 
-// router.put('/', function(req, res) {
-//   // console.log('req.body:', req.body);
-//   db.query('INSERT INTO scripts SET ?', req.body, function(err, result) {
-//     if(err) {
-//       res.status(400).send(err);
-//       return;
-//     }
-//   });
-//   res.send();
-// });
-//
-// //router.put
-//
-// //router.delete
 module.exports = router;
