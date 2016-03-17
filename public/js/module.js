@@ -7,7 +7,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state('home', { url: '/', templateUrl: '/partials/home.html', controller: 'homeCtrl'})
     .state('category', { url: '/category/:category', templateUrl: 'partials/category.html', controller: 'catCtrl' })
     .state('splash', { url: '/splash', templateUrl: 'partials/splash.html', controller: 'splashCtrl' })
-    .state('custom', { url: '/custom', templateUrl: 'partials/custom.html', controller: 'customCtrl' })
+    .state('custom', { url: '/newScript/custom', templateUrl: 'partials/custom.html', controller: 'customCtrl' })
 
   $urlRouterProvider.otherwise('/');
 });
