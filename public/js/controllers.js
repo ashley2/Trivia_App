@@ -2,6 +2,7 @@
 
 var app = angular.module('triviaApp');
 
+
 // var regexUrl = '/\w+$/m';
 
 app.controller('homeCtrl', function($scope, $http, $state, $stateParams) {
@@ -20,7 +21,7 @@ app.controller('homeCtrl', function($scope, $http, $state, $stateParams) {
 })
 
 app.controller('catCtrl', function($scope, $http, $stateParams, $state) {
-  // console.log('params:', $stateParams.category);
+  $scope.scripts = [];
   console.log('catCtrl');
 
     $http({
@@ -32,28 +33,74 @@ app.controller('catCtrl', function($scope, $http, $stateParams, $state) {
       }, function(error){
         console.log('error');
     });
-  // $scope.scripts = [];
-  // var params = $stateParams.category;
-  // console.log('params', $stateParams);
-});
-// app.controller('stackCtrl', function($scope, $http, $stateParams) {
-//   console.log('catCtrl');
-//
-//   // $scope.scripts = [];
-//   // var params = $stateParams.category;
-//   // console.log('params', $stateParams);
-// });
-// app.controller('leadersCtrl', function($scope, $http, $stateParams) {
-//   console.log('catCtrl');
-//
-//   // $scope.scripts = [];
-//   // var params = $stateParams.category;
-//   // console.log('params', $stateParams);
-// });
-// app.controller('herstoryCtrl', function($scope, $http, $stateParams) {
-//   console.log('catCtrl');
-//
-//   // $scope.scripts = [];
-//   // var params = $stateParams.category;
-//   // console.log('params', $stateParams);
-// });
+    //Post
+
+    $scope.createScript = function(){
+      // var id = uuid();
+      // var newScript = $scope.newScript;
+
+    $http({
+      method: "POST",
+      url: "/scripts/category/",
+      data: { category: 'custom', question: 'q20', answer1: 'a1', answer2: 'a2', answer3: 'a3'}
+      }).then(function(response){
+
+        // $scope.scripts.push(newScript);
+        // console.log('scripts', $scope.scripts);
+      }, function(error){
+        console.log('error');
+    });
+  }
+
+    //Delete -id
+    $http({
+      method: "DELETE",
+      url: "/scripts/category/" + $state.params.category
+      }).then(function(response){
+        $scope.scripts = response.data;
+        console.log('scripts', $scope.scripts);
+      }, function(error){
+        console.log('error');
+    });
+    //put id
+    $http({
+      method: "PUT",
+      url: "/scripts/category/" + $state.params.category
+      }).then(function(response){
+        $scope.scripts = response.data;
+        console.log('scripts', $scope.scripts);
+      }, function(error){
+        console.log('error');
+    });
+
+  });
+
+    // $scope.addUpload = function() {
+    //
+    //   ScriptService.create($scope.newScript)
+    //   .then(function(res) {
+    //
+    //   }, function(err) {
+    //   console.error('err:', err);
+    //   })
+    // };
+    //
+    // $scope.removeUpload = function(script) {
+    //   ScriptService.remove(script)
+    //   .then(function(res) {
+    //     var index = $scope.scripts.indexOf(script);
+    //     $scope.scripts.splice(index, 1);
+    //   }, function(err) {
+    //     console.error('err:', err);
+    //   });
+    // }
+    //
+    // $scope.editScript = function(script) {
+    //   ScriptService.edit(script)
+    //   .then(function(res) {
+    //     var index = $scope.scripts.indexOf(script);
+    //     $scope.scripts.splice(index, 1);
+    //   }, function(err) {
+    //     console.error('err:', err);
+    //   });
+    // }
