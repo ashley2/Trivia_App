@@ -16,7 +16,7 @@ a {
 }
 .photo {
   max-width: 300px;
-  max-width: 300px;
+  max-height: 300px;
 }
 .questionBox1, .questionBox2, .questionBox3, .questionBox4, .questionBox5 {
   height: 200px;

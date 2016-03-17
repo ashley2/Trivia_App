@@ -27,12 +27,10 @@
         </div>
       </div>
         <div class="row">
-
           <div class="input-field col s4">
             <input id="correctAnswer" type="text" class="validate" ng-model="newScript.show1">
             <label for="CorrectAnswer">Is correct?</label>
           </div>
-
           <div class="input-field col s4">
             <input id="Question" type="text" class="validate" ng-model="newScript.show2">
             <label for="incorrect">Is correct?</label>
@@ -60,9 +58,8 @@
       </div>
     </div>
   </div>
-  <span><i class="material-icons red">delete</i><span>
-    <div class="row">
 
+  <div class="row">
     <div class="col s4">
       <div class="card">
           <div class="card-image waves-effect waves-block waves-light">
@@ -117,6 +114,8 @@
         </div>
       </div>
     </div>
+      <a class="btn-floating yellow darken-1" ng-click='deleteScript($index)'><i class="material-icons red">delete</i><a>
+      <a class="btn-floating yellow darken-1" ng-click='editScript($index)'><i class="material-icons">mode_edit</i></a>
 </div>
 </div>
 </div>

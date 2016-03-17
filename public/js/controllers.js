@@ -1,7 +1,6 @@
 'use strict';
 
 var app = angular.module('triviaApp');
-// var uuid = require('uuid');
 
 app.controller('homeCtrl', function($scope, $http, $state, $stateParams) {
   console.log('homeCtrl');
@@ -13,7 +12,6 @@ app.controller('homeCtrl', function($scope, $http, $state, $stateParams) {
     var category = $stateParams.category;
     $state.go('category', {
       category: category
-      // category: `${category}`
     })
   }
 })
@@ -32,7 +30,7 @@ app.controller('catCtrl', function($scope, $http, $stateParams, $state) {
       url: "/scripts/category/" + $state.params.category
       }).then(function(response){
         $scope.scripts = response.data;
-        console.log('scripts', $scope.scripts);
+        // console.log('scripts', $scope.scripts);
       }, function(error){
         console.log('error');
     });
@@ -44,6 +42,16 @@ app.controller('catCtrl', function($scope, $http, $stateParams, $state) {
 app.controller('customCtrl', function($scope, $http, $stateParams, $state) {
   console.log('working');
   $scope.newScripts = [];
+
+    $http({
+      method: "GET",
+      url: "/newScript/custom"
+      }).then(function(response){
+        $scope.newScript = response.data;
+      }, function(error){
+        console.log('error');
+    });
+
     $scope.createScript = function(){
       var newScript = $scope.newScript;
       newScript.category = "custom";
@@ -63,34 +71,31 @@ app.controller('customCtrl', function($scope, $http, $stateParams, $state) {
         console.log('error');
     });
     }
+
+    $scope.deleteScript = function(index) {
+      var deleted = $scope.newScripts.splice(index, 1);
+      $http({
+        method: 'DELETE',
+        url: `/newScript/custom/delete/${index}`
+      })
+      .then(function(data) {
+        console.log('success');
+        // $scope.newScripts.splice(index, 1);
+      }, function(err) {
+        console.error(err);
+      })
+    }
+    $scope.editScript = function(index) {
+      var edit = $scope.newScripts.splice(index, 1);
+      $http({
+        method: 'PUT',
+        url: `/newScript/custom/delete/${index}`
+      })
+      .then(function(data) {
+        console.log('success');
+        // $scope.newScripts.splice(index, 1);
+      }, function(err) {
+        console.error(err);
+      })
+    }
 });
-// $scope.deleteContact = function(contact) {
-//   var index = $scope.contacts.indexOf(contact);
-//   $http({
-//     method: 'DELETE',
-//     url: "/contacts/" + index,
-//   })
-//   .then(function(data) {
-//     $scope.contacts.splice(index, 1);
-//   }, function(err) {
-//     console.error(err);
-//   })
-// }
-//
-// $scope.editContact = function(newContact) {
-//   var index = $scope.contacts.indexOf(newContact);
-//   $scope.contacts.push($scope.contact);
-//   $http({
-//     method: 'PUT',
-//     url: "/contacts/" + index,
-//     data: index
-//   })
-//   .then(function(data){
-//     addContact();
-//     console.log('data', data);
-//   }, function(err){
-//     console.error(err);
-//   })
-// };
-//   $scope.contact = {};
-// });
