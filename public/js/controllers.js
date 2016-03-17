@@ -24,6 +24,11 @@ app.controller('catCtrl', function($scope, $http, $stateParams, $state) {
   $scope.scripts = [];
   console.log('catCtrl');
 
+  $scope.getSelection = function(script) {
+    console.log('click');
+    console.log('script:', script);
+  }
+
     $http({
       method: "GET",
       url: "/scripts/category/" + $state.params.category
@@ -51,29 +56,29 @@ app.controller('catCtrl', function($scope, $http, $stateParams, $state) {
         console.log('error');
     });
   }
-
-    //Delete -id
-    $http({
-      method: "DELETE",
-      url: "/scripts/category/" + $state.params.category
-      }).then(function(response){
-        $scope.scripts = response.data;
-        console.log('scripts', $scope.scripts);
-      }, function(error){
-        console.log('error');
-    });
-    //put id
-    $http({
-      method: "PUT",
-      url: "/scripts/category/" + $state.params.category
-      }).then(function(response){
-        $scope.scripts = response.data;
-        console.log('scripts', $scope.scripts);
-      }, function(error){
-        console.log('error');
-    });
-
-  });
+});
+  //   //Delete -id
+  //   $http({
+  //     method: "DELETE",
+  //     url: "/scripts/category/" + $state.params.category
+  //     }).then(function(response){
+  //       $scope.scripts = response.data;
+  //       console.log('scripts', $scope.scripts);
+  //     }, function(error){
+  //       console.log('error');
+  //   });
+  //   //put id
+  //   $http({
+  //     method: "PUT",
+  //     url: "/scripts/category/" + $state.params.category
+  //     }).then(function(response){
+  //       $scope.scripts = response.data;
+  //       console.log('scripts', $scope.scripts);
+  //     }, function(error){
+  //       console.log('error');
+  //   });
+  //
+  // });
 
     // $scope.addUpload = function() {
     //
