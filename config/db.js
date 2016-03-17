@@ -2,12 +2,14 @@
 
 var mysql = require('mysql');
 
-var connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'awesome',
-  database: 'trivia'
-})
+// var connection = mysql.createConnection({
+//   host: 'localhost',
+//   user: 'root',
+//   password: 'awesome',
+//   database: 'trivia'
+// })
+
+var connection = mysql.createConnection(process.env.JAWSDB_URL);
 
 connection.connect(function(err) {
   if(err) {
@@ -16,7 +18,5 @@ connection.connect(function(err) {
     console.log('connection success');
   }
 });
-
-// connection.query("SELECT * FROM scripts WHERE cat")
 
 module.exports = connection;
