@@ -16,7 +16,6 @@ router.get('/category/:chosenCategory', function(req, res, next) {
 
 router.post('/category', function(req, res) {
 var post = req.body;
-
   console.log('req.body:', req.body);
   db.query('INSERT INTO scripts SET ?', post, function(err, result) {
     if(err) {
