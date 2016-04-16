@@ -21,11 +21,11 @@ a {
 }
 .questionBox1, .questionBox2, .questionBox3, .questionBox4, .questionBox5 {
   height: 200px;
-  width: 816px;
+  width: auto;
 }
 .answerBox1, .answerBox2, .answerBox3, .answerBox4, .answerBox5 {
   height: 220px;
-  width: 252px;
+  width: auto;
 }
 .questionBox1, .answerBox1 {
   background-color: #1E88E5
