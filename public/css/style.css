@@ -15,7 +15,7 @@ a {
   color: #00B7FF;
 }
 .photo {
-  width: 100%;
+  width: auto%;
   max-height: 300px;
   /*max-height: 300px;*/
 }
