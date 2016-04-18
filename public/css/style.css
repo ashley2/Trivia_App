@@ -15,7 +15,6 @@ a {
   color: #00B7FF;
 }
 
-
 .color1 {
   background-color: #512da8;
 }
@@ -37,7 +36,7 @@ a {
   max-height: 300px;
   /*max-height: 300px;*/
 }
-.questionBox1, .questionBox2, .questionBox3, .questionBox4, .questionBox5 {
+.box, .questionBox1, .questionBox2, .questionBox3, .questionBox4, .questionBox5 {
   height: 200px;
   width: auto;
 }
@@ -71,4 +70,10 @@ a {
 }
 .selected {
   border: 2px solid green;
+}
+
+@media (max-width: 1570px) {
+  .card {
+      
+  }
 }
