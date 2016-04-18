@@ -20,6 +20,14 @@ app.controller('catCtrl', function($scope, $http, $stateParams, $state) {
   $scope.scripts = [];
   console.log('catCtrl');
 
+  $scope.colors = function(){
+
+  var colors =['color1', 'color2', 'color3', 'color4', 'color5'];
+  var color = colors[Math.floor(Math.random()*colors.length)];
+
+  return color;
+}
+
   $scope.getSelection = function(script) {
     console.log('click');
     console.log('script:', script);
